@@ -1,0 +1,415 @@
+.gem-details-wrapper {
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 40px;
+}
+
+.gem-details-loading,
+.gem-details-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.gem-details-error h2 {
+  color: #dc2626;
+  margin-bottom: 24px;
+}
+
+.back-btn {
+  padding: 12px 24px;
+  background: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Header */
+.details-header {
+  max-width: 1400px;
+  margin: 0 auto 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.back-button:hover {
+  background: #f9fafb;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  background: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.edit-button:hover {
+  background: #1e3a8a;
+}
+
+/* Content */
+.gem-details-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Left Column - Images */
+.details-left {
+  position: sticky;
+  top: 40px;
+  height: fit-content;
+}
+
+.main-image {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.main-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.no-image-large {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 120px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.image-nav {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+.image-nav button {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.2s;
+}
+
+.image-nav button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.image-nav button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.thumbnail-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 12px;
+}
+
+.thumbnail {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.thumbnail:hover {
+  border-color: #3b82f6;
+}
+
+.thumbnail.active {
+  border-color: #1e40af;
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Column - Details */
+.details-right {
+  /* No special styles needed */
+}
+
+.status-badge-large {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.badge-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-rejected {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.gem-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+  line-height: 1.2;
+}
+
+.gem-price {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e40af;
+  margin-bottom: 32px;
+}
+
+/* Info Section */
+.info-section {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 14px;
+  color: #1a1a2e;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Specifications */
+.specs-section {
+  margin-bottom: 32px;
+}
+
+.specs-section h3,
+.description-section h3,
+.certificates-section h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 16px 0;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.spec-item {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.spec-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.spec-value {
+  font-size: 16px;
+  color: #1a1a2e;
+  font-weight: 600;
+}
+
+/* Description */
+.description-section {
+  margin-bottom: 32px;
+}
+
+.description-section p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  margin: 0;
+}
+
+/* Certificates */
+.certificates-section {
+  margin-bottom: 32px;
+}
+
+.certificates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.certificate-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid #e5e7eb;
+}
+
+.certificate-card:hover {
+  background: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.cert-icon {
+  font-size: 32px;
+}
+
+.cert-type {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+
+.cert-link {
+  font-size: 12px;
+  color: #3b82f6;
+}
+
+/* Rejection Reason */
+.rejection-reason {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.rejection-reason h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #991b1b;
+}
+
+.rejection-reason p {
+  margin: 0;
+  font-size: 14px;
+  color: #7f1d1d;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .gem-details-content {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .details-left {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .gem-details-wrapper {
+    padding: 20px;
+  }
+
+  .gem-details-content {
+    padding: 24px;
+  }
+
+  .gem-title {
+    font-size: 24px;
+  }
+
+  .gem-price {
+    font-size: 24px;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+}
